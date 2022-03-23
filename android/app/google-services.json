@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "944311410944",
+    "project_id": "nudj-ece2c",
+    "storage_bucket": "nudj-ece2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944311410944:android:c50237a175aab9620353e5",
+        "android_client_info": {
+          "package_name": "com.vassar.nudj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944311410944-7b5lufa8fgq2usr1j40sb17vvlh5ke5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk4Hba34XwFDgKy52DeLLvd2O6MmxuYEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944311410944-7b5lufa8fgq2usr1j40sb17vvlh5ke5g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
