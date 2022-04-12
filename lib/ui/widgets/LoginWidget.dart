@@ -52,21 +52,32 @@ class _LoginWidgetState extends State<LoginWidget> {
               ),
               Align(
                 alignment: Alignment.topRight,
-                child: Container(
-                  margin: const EdgeInsets.all(20),
-                  padding:
-                      const EdgeInsets.only(left: 20, right: 24, top: 8, bottom: 8),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border: Border.all(color: const Color(0xff603192))),
-                  alignment: Alignment.topRight,
-                  width: 100,
-                  child: const Text('Signup',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Color(0xff603192),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15)),
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpWidget(
+                            title: 'Sign Up',
+                          )),
+                    );
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.all(20),
+                    padding:
+                        const EdgeInsets.only(left: 20, right: 24, top: 8, bottom: 8),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4.0),
+                        border: Border.all(color: const Color(0xff603192))),
+                    alignment: Alignment.topRight,
+                    width: 100,
+                    child: const Text('Signup',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color(0xff603192),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15)),
+                  ),
                 ),
               ),
             ],
