@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:nudj/ui/widgets/LoginWidget.dart';
+import 'OtpVerificationWidget.dart';
 
 class SignUpWidget extends StatefulWidget {
   const SignUpWidget({Key? key, required this.title}) : super(key: key);
@@ -76,11 +77,10 @@ class _SignUpScreenState extends State<SignUpWidget> {
                   child: Container(
                     margin: const EdgeInsets.all(20),
                     padding:
-                    const EdgeInsets.only(left: 20, right: 24, top: 8, bottom: 8),
+                    const EdgeInsets.only(left: 20, right: 20, top: 8, bottom: 8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4.0),
                         border: Border.all(color: const Color(0xff603192))),
-                    alignment: Alignment.topRight,
                     width: 100,
                     child: const Text('Login',
                         textAlign: TextAlign.center,
@@ -246,7 +246,7 @@ class _SignUpScreenState extends State<SignUpWidget> {
                   ),
                 ),
                 Container(
-                  height: 60,
+                  height: 30,
                   color: Colors.transparent,
                 ),
                 Padding(
@@ -261,7 +261,10 @@ class _SignUpScreenState extends State<SignUpWidget> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const SignUpWidget(title: 'Sign Up',)),
+                            MaterialPageRoute(
+                                builder: (context) => const OtpVerificationWidget(
+                                  title: 'OTP Verification',
+                                )),
                           );
                         },
                         style: ElevatedButton.styleFrom(
@@ -314,121 +317,180 @@ class _SignUpScreenState extends State<SignUpWidget> {
   }
 
   _mSignUpWidget(){
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            height: 40,
-            color: Colors.transparent,
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                border: UnderlineInputBorder(),
-                labelText: 'First Name',
-              ),
-              keyboardType: TextInputType.text,
+    return Scaffold(
+      backgroundColor: Color(0xffFDFAFF),
+      appBar: AppBar(
+        title: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(widget.title),
+        ),
+        backgroundColor: const Color(0xff603192),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              height: 40,
+              color: Colors.transparent,
             ),
-          ),
-          Container(
-            height: 20,
-            color: Colors.transparent,
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                border: UnderlineInputBorder(),
-                labelText: 'Last Name',
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
+                  labelText: 'First Name',
+                ),
+                keyboardType: TextInputType.text,
               ),
-              keyboardType: TextInputType.text,
             ),
-          ),
-          Container(
-            height: 20,
-            color: Colors.transparent,
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                border: UnderlineInputBorder(),
-                labelText: 'Phone',
+            Container(
+              height: 20,
+              color: Colors.transparent,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
+                  labelText: 'Last Name',
+                ),
+                keyboardType: TextInputType.text,
               ),
-              keyboardType: TextInputType.phone,
             ),
-          ),
-          Container(
-            height: 20,
-            color: Colors.transparent,
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-            child: TextFormField(
-              decoration: InputDecoration(
-                border: const UnderlineInputBorder(),
-                labelText: 'Date of Birth',
-                suffixIcon: IconButton(
-                  icon: const Icon(
-                    Icons.calendar_today,
+            Container(
+              height: 20,
+              color: Colors.transparent,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
+                  labelText: 'Phone',
+                ),
+                keyboardType: TextInputType.phone,
+              ),
+            ),
+            Container(
+              height: 20,
+              color: Colors.transparent,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  border: const UnderlineInputBorder(),
+                  labelText: 'Date of Birth',
+                  suffixIcon: IconButton(
+                    icon: const Icon(
+                      Icons.calendar_today,
+                    ),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text('Show date picker'),
+                      ));
+                    },
                   ),
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                      content: Text('Show date picker'),
-                    ));
-                  },
+                ),
+                keyboardType: TextInputType.none,
+              ),
+            ),
+            Container(
+              height: 25,
+              color: Colors.transparent,
+            ),
+            _genderBar(),
+            Container(
+              height: 30,
+              color: Colors.transparent,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              child: Align(
+                alignment: Alignment.center,
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    text: 'By continuing, you agree to our ',
+                    style: const TextStyle(
+                      color: Colors.grey,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Terms of Service ',
+                        recognizer: TapGestureRecognizer()..onTap = () {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                            content: Text('Show terms of service!'),
+                          ));
+                        },
+                        style: const TextStyle(
+                          color: Color(0xff603192),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const TextSpan(
+                        text: 'and ',
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Privacy Policy',
+                        recognizer: TapGestureRecognizer()..onTap = () {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                            content: Text('Show privacy policy!'),
+                          ));
+                        },
+                        style: const TextStyle(
+                          color: Color(0xff603192),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              keyboardType: TextInputType.none,
             ),
-          ),
-          Container(
-            height: 25,
-            color: Colors.transparent,
-          ),
-          _genderBar(),
-          Container(
-            height: 30,
-            color: Colors.transparent,
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-            child: Align(
+            Container(
+              height: 60,
+              color: Colors.transparent,
+            ),
+            ElevatedButton(
+              child: const Text('Sign Up'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const OtpVerificationWidget(
+                        title: 'OTP Verification',
+                      )),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                  primary: const Color(0xff603192),
+                  padding: const EdgeInsets.symmetric(horizontal: 135, vertical: 10),
+                  textStyle: const TextStyle(
+                    fontSize: 20,
+                  )),
+            ),
+            Container(
+              height: 20,
+              color: Colors.transparent,
+            ),
+            Align(
               alignment: Alignment.center,
               child: RichText(
-                textAlign: TextAlign.center,
                 text: TextSpan(
-                  text: 'By continuing, you agree to our ',
+                  text: 'Already have an account? ',
                   style: const TextStyle(
                     color: Colors.grey,
                   ),
                   children: <TextSpan>[
                     TextSpan(
-                      text: 'Terms of Service ',
+                      text: 'Login',
                       recognizer: TapGestureRecognizer()..onTap = () {
-                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text('Show terms of service!'),
-                        ));
-                      },
-                      style: const TextStyle(
-                        color: Color(0xff603192),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const TextSpan(
-                      text: 'and ',
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
-                    ),
-                    TextSpan(
-                      text: 'Privacy Policy',
-                      recognizer: TapGestureRecognizer()..onTap = () {
-                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text('Show privacy policy!'),
-                        ));
+                        Navigator.pop(context);
                       },
                       style: const TextStyle(
                         color: Color(0xff603192),
@@ -439,58 +501,12 @@ class _SignUpScreenState extends State<SignUpWidget> {
                 ),
               ),
             ),
-          ),
-          Container(
-            height: 60,
-            color: Colors.transparent,
-          ),
-          ElevatedButton(
-            child: const Text('Sign Up'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SignUpWidget(title: 'Sign Up',)),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-                primary: const Color(0xff603192),
-                padding: const EdgeInsets.symmetric(horizontal: 135, vertical: 10),
-                textStyle: const TextStyle(
-                  fontSize: 20,
-                )),
-          ),
-          Container(
-            height: 20,
-            color: Colors.transparent,
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: RichText(
-              text: TextSpan(
-                text: 'Already have an account? ',
-                style: const TextStyle(
-                  color: Colors.grey,
-                ),
-                children: <TextSpan>[
-                  TextSpan(
-                    text: 'Login',
-                    recognizer: TapGestureRecognizer()..onTap = () {
-                      Navigator.pop(context);
-                    },
-                    style: const TextStyle(
-                      color: Color(0xff603192),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
+            Container(
+              height: 60,
+              color: Colors.transparent,
             ),
-          ),
-          Container(
-            height: 60,
-            color: Colors.transparent,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: const LoginWidget(title: ''),
-      home: const HomeWidget(title: 'Nudj - Home'),
+       home: const LoginWidget(title: ''),
+     // home: const HomeWidget(title: 'Nudj - Home'),
     );
   }
 }

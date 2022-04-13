@@ -65,11 +65,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                   child: Container(
                     margin: const EdgeInsets.all(20),
                     padding:
-                        const EdgeInsets.only(left: 20, right: 24, top: 8, bottom: 8),
+                        const EdgeInsets.only(left: 20, right: 20, top: 8, bottom: 8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4.0),
                         border: Border.all(color: const Color(0xff603192))),
-                    alignment: Alignment.topRight,
                     width: 100,
                     child: const Text('Signup',
                         textAlign: TextAlign.center,
