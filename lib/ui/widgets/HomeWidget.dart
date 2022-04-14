@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'MySeparator.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key, required this.title}) : super(key: key);
@@ -411,36 +414,43 @@ class _HomeWidgetState extends State<HomeWidget> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(0.0, 0.0, 18.0, 0.0),
-                      child: Container(
-                        height: 200,
-                        color: Colors.white,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(36.0, 48.0, 48.0, 12.0),
-                          child: Align(
-                            alignment: Alignment.topLeft,
-                            child: Column(
-                              children: const [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 12.0),
-                                    child: Text(
-                                      'Your Team & Contacts',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xff10121c),
+                      child: InkWell(
+                        onTap: (){
+                          setState(() {
+                            _profileFragmentIndex = 3;
+                          });
+                        },
+                        child: Container(
+                          height: 200,
+                          color: Colors.white,
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(36.0, 48.0, 48.0, 12.0),
+                            child: Align(
+                              alignment: Alignment.topLeft,
+                              child: Column(
+                                children: const [
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 12.0),
+                                      child: Text(
+                                        'Your Team & Contacts',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xff10121c),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Text(
-                                  'Get in touch with your care manager and team, or other crisis resources',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color(0xff555f6e),
+                                  Text(
+                                    'Get in touch with your care manager and team, or other crisis resources',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Color(0xff555f6e),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -1206,7 +1216,491 @@ class _HomeWidgetState extends State<HomeWidget> {
   }
 
   _wideProfileContactsList() {
+    return Container(
+      color: const Color(0xfff0f1f2),
+      height: MediaQuery.of(context).size.height,
+      child: Expanded(child: Padding(
+        padding: const EdgeInsets.fromLTRB(50.0, 50.0, 25.0, 50.0),
+        child: Container(
+          color: Colors.transparent,
+          child: Column(
 
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 18.0),
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        _profileFragmentIndex = 0;
+                      });
+                    },
+                    child: const Text(
+                      '<   Your Team & Contacts',
+                      style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.black87
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 0.0, 25.0, 0.0),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          flex:5,
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  color: Colors.white,
+                                  border: Border.all(color: const Color(0xffDEE4EB))
+                                ),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: 35,
+                                      color: Colors.transparent,
+                                    ),
+                                    Container(
+                                      width: 64,
+                                      height: 64,
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/SplashLogo3x.png'),
+                                          fit: BoxFit.fill,
+                                        ),
+                                        shape: BoxShape.circle,
+                                      ),),
+                                    const Padding(
+                                      padding: EdgeInsets.fromLTRB(8.0, 12.0, 8.0, 2.0),
+                                      child: Text(
+                                        'Leslie Knope',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      height: 10,
+                                      color: Colors.transparent,
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15.0),
+                                        color: const Color(0xff603192),
+                                      ),
+                                      child: const Padding(
+                                        padding: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
+                                        child: Text(
+                                          'YOUR CARE MANAGER',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.white
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      height: 70,
+                                      margin: EdgeInsets.only(left: 15,right: 15,top: 15,bottom: 10),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10.0),
+                                        color: const Color(0xffF6F7F8),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(15.0),
+                                        child: Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: const [
+                                              Text(
+                                                'Phone number',
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.black87,
+                                                ),
+                                                textAlign: TextAlign.left,
+                                              ),
+                                              Text(
+                                                '1(123) 123-1234',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  color:  Color(0xff7337af),
+                                                ),
+                                                textAlign: TextAlign.left,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      height: 70,
+                                      margin: EdgeInsets.only(left: 15,right: 15,top: 15,bottom: 10),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10.0),
+                                        color: const Color(0xffF6F7F8),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(15.0),
+                                        child: Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: const [
+                                              Text(
+                                                'email',
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.black87,
+                                                ),
+                                                textAlign: TextAlign.left,
+                                              ),
+                                              Text(
+                                                'leslie@nudjhealth.com',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  color:  Color(0xff7337af),
+                                                ),
+                                                textAlign: TextAlign.left,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                   // Email Info
+                                    SizedBox(height: 30,),
+                                    Container(child: const MySeparator(color: Colors.grey)),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.all(20),
+                                          height: 40,
+                                          width: 40,
+                                          decoration: const BoxDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                  'assets/images/SplashLogo3x.png'),
+                                              fit: BoxFit.fill,
+                                            ),
+                                            shape: BoxShape.circle,
+                                          ),
+                                    ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(18.0),
+                                            child: Align(
+                                              alignment: Alignment.centerLeft,
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: const [
+                                                  Text(
+                                                    'Ann Perkins',
+                                                    style: TextStyle(
+                                                      fontSize: 18,
+                                                      color: Colors.black87,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                  Text(
+                                                    'Nutritionist',
+                                                    style: TextStyle(
+                                                      fontSize: 16,
+                                                      color: Colors.black54,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                      ],
+                                    ),
+                                    Divider(indent: 60,),// Email Info
+                                    Row(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.all(20),
+                                          height: 40,
+                                          width: 40,
+                                          decoration: const BoxDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                  'assets/images/SplashLogo3x.png'),
+                                              fit: BoxFit.fill,
+                                            ),
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(18.0),
+                                          child: Align(
+                                            alignment: Alignment.centerLeft,
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: const [
+                                                Text(
+                                                  'Dr. Richard Nygard',
+                                                  style: TextStyle(
+                                                    fontSize: 18,
+                                                    color: Colors.black87,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                                Text(
+                                                  'Nudj MD',
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    color: Colors.black54,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ), /// Email Info
+
+                                  ],
+                                ),
+                              ),
+
+                              Container(height: 25, color: Colors.transparent,),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: Colors.transparent,
+                          width: 25,
+                        ),
+                        Expanded(
+                          flex: 3,
+                            child: Container(
+                           //   margin: EdgeInsets.all(20.0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                color: Colors.white,
+                                  border: Border.all(color: const Color(0xffDEE4EB))
+                              ),
+                              child: Column(
+                                children: [
+                                  Column(
+                                    children: [
+                                      Container(
+                                        height: 35,
+                                        color: Colors.transparent,
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(left: 20),
+                                        child: const Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            'Crisis hotlines',
+                                            style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.black87,
+                                            ),
+                                            textAlign: TextAlign.left,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 10,),
+                                      Container(
+                                        margin: EdgeInsets.only(left: 20),
+                                        child: const Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            'If your are in crisis and need help immediately, get\nsupport now through one of the trusted\nresources below.',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.black87,
+                                            ),
+                                            textAlign: TextAlign.left,
+                                          ),
+                                        ),
+                                      ),
+
+                                      SizedBox(height: 20,),
+
+                                      Container(
+                                        margin: EdgeInsets.only(left: 20),
+                                        child: const Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            'Nacional de Prevencion del Suicidio',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.black87,
+                                              fontWeight: FontWeight.bold,
+                                                decoration: TextDecoration.underline
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: const EdgeInsets.only(left: 20),
+                                        child: const Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            '1(123) 123-1234',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              color: Color(0xff603192),
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Divider(indent: 20,thickness: 2,),
+
+                                      SizedBox(height: 10,),
+
+                                      Container(
+                                        margin: EdgeInsets.only(left: 20),
+                                        child: const Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            'Nacional de Prevencion del Suicidio',
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.black87,
+                                                fontWeight: FontWeight.bold,
+                                                decoration: TextDecoration.underline
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: const EdgeInsets.only(left: 20),
+                                        child: const Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            '1(123) 123-1234',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              color: Color(0xff603192),
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Divider(indent: 20,thickness: 2,),
+                                      SizedBox(height: 10,),
+
+                                      Container(
+                                        margin: EdgeInsets.only(left: 20),
+                                        child: const Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            'Nacional de Prevencion del Suicidio',
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.black87,
+                                                fontWeight: FontWeight.bold,
+                                                decoration: TextDecoration.underline
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: const EdgeInsets.only(left: 20),
+                                        child: const Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            '1(123) 123-1234',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              color: Color(0xff603192),
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 20,),
+                                      Container(
+                                          decoration: const BoxDecoration(
+                                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0),bottomRight: Radius.circular(10)),
+                                            color: Color(
+                                                0xff021f40),
+                                          ),
+                                        alignment:Alignment.center ,
+                                        child: Align(
+                                          alignment: Alignment.center,
+                                          child: Row(
+                                            children: [
+                                              SizedBox(width: 50,),
+                                              const Icon(
+                                                Icons.warning_amber_outlined,
+                                                color: Colors.grey,
+                                                size: 24.0,
+                                              ),
+                                              Expanded(
+                                                flex: 1,
+                                                child: Container(
+                                                  decoration: const BoxDecoration(
+                                                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0),bottomRight: Radius.circular(10)),
+                                                    color: Color(
+                                                        0xff021f40),
+                                                  ),
+                                                  height: 70,
+                                                  child: Padding(
+                                                    padding: const EdgeInsets.all(18.0),
+                                                    child: Align(
+                                                      alignment: Alignment.centerLeft,
+                                                      child: Container(
+
+                                                        child:const Text(
+                                                          'If this is an emergency, please dial 911.',
+                                                          style: TextStyle(
+                                                              fontSize: 14,
+                                                              color: Colors.white,
+                                                              fontWeight: FontWeight.bold
+                                                          ),
+                                                          textAlign: TextAlign.left,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ), // Email Info
+
+                                    ],
+                                  ),
+
+                                ],
+                              ),
+                            ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      )),
+    );
   }
 
   _wideProfileSettings() {
