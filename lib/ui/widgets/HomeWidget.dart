@@ -86,7 +86,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                 color: Colors.orange,
               ),
               child: const Center(
-                child: Text('GG', style: TextStyle(fontSize: 18),),
+                child: Text(
+                  'GG',
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
             ),
             const Padding(
@@ -141,7 +144,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0.0),
-                      child: Text('Check in', style: TextStyle(fontSize: 12),),
+                      child: Text(
+                        'Check in',
+                        style: TextStyle(fontSize: 12),
+                      ),
                     )
                   ],
                 ),
@@ -165,7 +171,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0.0),
-                      child: Text('Progress', style: TextStyle(fontSize: 12),),
+                      child: Text(
+                        'Progress',
+                        style: TextStyle(fontSize: 12),
+                      ),
                     )
                   ],
                 ),
@@ -189,7 +198,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0.0),
-                      child: Text('Learn', style: TextStyle(fontSize: 12),),
+                      child: Text(
+                        'Learn',
+                        style: TextStyle(fontSize: 12),
+                      ),
                     )
                   ],
                 ),
@@ -213,7 +225,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0.0),
-                      child: Text('Community', style: TextStyle(fontSize: 12),),
+                      child: Text(
+                        'Community',
+                        style: TextStyle(fontSize: 12),
+                      ),
                     )
                   ],
                 ),
@@ -233,21 +248,13 @@ class _HomeWidgetState extends State<HomeWidget> {
     );
   }
 
-  _communityClicked() {
+  _communityClicked() {}
 
-  }
+  _learnClicked() {}
 
-  _learnClicked() {
+  _progressClicked() {}
 
-  }
-
-  _progressClicked() {
-
-  }
-
-  _checkInClicked() {
-
-  }
+  _checkInClicked() {}
 
   _wideHomeLogoutWidget() {
     return Column(
@@ -264,7 +271,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0.0),
-                    child: Text('Log out', style: TextStyle(fontSize: 12),),
+                    child: Text(
+                      'Log out',
+                      style: TextStyle(fontSize: 12),
+                    ),
                   )
                 ],
               ),
@@ -276,21 +286,24 @@ class _HomeWidgetState extends State<HomeWidget> {
   }
 
   _wideHomeBody() {
-    if(_profileFragmentIndex == 0) {
+    if (_profileFragmentIndex == 0) {
       return _wideProfileHome();
-    } else if(_profileFragmentIndex == 1) {
+    } else if (_profileFragmentIndex == 1) {
       return _wideProfileDetail();
-    } else if(_profileFragmentIndex == 2) {
+    } else if (_profileFragmentIndex == 2) {
       return _wideProfileMedicationList();
-    } else if(_profileFragmentIndex == 3) {
+    } else if (_profileFragmentIndex == 3) {
       return _wideProfileContactsList();
-    } else if(_profileFragmentIndex == 4) {
+    } else if (_profileFragmentIndex == 4) {
       // This should only be returned for mobile and tablets, not for web
       return _wideProfileSettings();
     } else {
       // TODO : Show a window with an error message and a infographic
       // TODO : Remove SizedBox
-      return const SizedBox(width: 0, height: 0,);
+      return const SizedBox(
+        width: 0,
+        height: 0,
+      );
     }
   }
 
@@ -298,7 +311,8 @@ class _HomeWidgetState extends State<HomeWidget> {
     return Container(
       color: const Color(0xfff0f1f2),
       height: MediaQuery.of(context).size.height,
-      child: Expanded(child: Padding(
+      child: Expanded(
+          child: Padding(
         padding: const EdgeInsets.fromLTRB(50.0, 50.0, 50.0, 50.0),
         child: Container(
           color: Colors.transparent,
@@ -310,10 +324,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 18.0),
                   child: Text(
                     'Your Account',
-                    style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.black87
-                    ),
+                    style: TextStyle(fontSize: 24, color: Colors.black87),
                   ),
                 ),
               ),
@@ -332,7 +343,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                           height: 200,
                           color: Colors.white,
                           child: Padding(
-                            padding: const EdgeInsets.fromLTRB(36.0, 48.0, 48.0, 12.0),
+                            padding: const EdgeInsets.fromLTRB(
+                                36.0, 48.0, 48.0, 12.0),
                             child: Align(
                               alignment: Alignment.topLeft,
                               child: Column(
@@ -340,7 +352,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   Align(
                                     alignment: Alignment.topLeft,
                                     child: Padding(
-                                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 12.0),
+                                      padding: EdgeInsets.fromLTRB(
+                                          0.0, 0.0, 0.0, 12.0),
                                       child: Text(
                                         'Patient Profile',
                                         style: TextStyle(
@@ -378,7 +391,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                           height: 200,
                           color: Colors.white,
                           child: Padding(
-                            padding: const EdgeInsets.fromLTRB(36.0, 48.0, 48.0, 12.0),
+                            padding: const EdgeInsets.fromLTRB(
+                                36.0, 48.0, 48.0, 12.0),
                             child: Align(
                               alignment: Alignment.topLeft,
                               child: Column(
@@ -386,7 +400,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   Align(
                                     alignment: Alignment.topLeft,
                                     child: Padding(
-                                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 12.0),
+                                      padding: EdgeInsets.fromLTRB(
+                                          0.0, 0.0, 0.0, 12.0),
                                       child: Text(
                                         'Medication List',
                                         style: TextStyle(
@@ -526,6 +541,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0.0, 0.0, 25.0, 0.0),
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
                           flex:5,
@@ -1023,7 +1039,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           width: 25,
                         ),
                         Expanded(
-                          flex: 3,
+                          flex: 2,
                           child: Column(
                             children: [
                               Container(
@@ -1043,11 +1059,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       const Text(
                                         'Which details can be edited?',
                                         style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black87
-                                        ),
+                                            fontSize: 14,
+                                            color: Colors.black87),
                                       ),
-                                      Container(height: 5,),
+                                      Container(
+                                        height: 5,
+                                      ),
                                       const Text(
                                         'At the time, your profile can only be '
                                         'edited by your care manager to ensure '
@@ -1087,7 +1104,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     _medication.add(Medication('Eliquis', '2.5mg', 'Take twice a day', 'With food', true));
     _medication.add(Medication('Lipitor', '40mg', 'Take daily', 'With food', true));
     _medication.add(Medication('Multaq', '400mg', 'Take twice a day', '', true));
-    _medication.add(Medication('Synthroid', '125mcg', 'Take daily', 'With food', true));
+    _medication.add(Medication('Synthroid', '125mg', 'Take daily', 'With food', true));
     _medication.add(Medication('diltiazem ER', '2.5mg', 'Take every evening', '', true));
     _medication.add(Medication('Hydrocortisol', '2.5mg', 'Take twice a day', '', true));
     // TODO : Create layout for inactive medication below the active medication listview
@@ -1101,56 +1118,100 @@ class _HomeWidgetState extends State<HomeWidget> {
 
     return Container(
       color: const Color(0xfff0f1f2),
-      height: MediaQuery.of(context).size.height,
-      child: Expanded(child: Padding(
-        padding: const EdgeInsets.fromLTRB(50.0, 50.0, 25.0, 50.0),
+      //  height: MediaQuery.of(context).size.height,
+      child: Expanded(
+          child: Padding(
+        padding: const EdgeInsets.fromLTRB(50.0, 50.0, 25.0, 0.0),
         child: Container(
           color: Colors.transparent,
           child: Column(
             children: [
               Align(
                 alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 18.0),
-                  child: InkWell(
-                    onTap: () {
-                      setState(() {
-                        _profileFragmentIndex = 0;
-                      });
-                    },
-                    child: const Text(
-                      '<   Medication List',
-                      style: TextStyle(
-                          fontSize: 24,
-                          color: Colors.black87
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 18.0),
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          _profileFragmentIndex = 0;
+                        });
+                      },
+                      child: const Text(
+                        '<   Medication List',
+                        style: TextStyle(fontSize: 24, color: Colors.black87),
                       ),
                     ),
                   ),
                 ),
               ),
-              /*ListView.builder(
-                                  itemCount: _medication.length,
-                                  itemBuilder: (BuildContext context, int index) {
-                                    return Container(
-                                      height: 50,
-                                      color: Colors.amber,
-                                      child: Center(child: Text('Entry ${_medication[index]._name}')),
-                                    );
-                                  }
-                              ),*/
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0.0, 0.0, 25.0, 0.0),
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
-                          flex:5,
+                          flex: 5,
                           child: Padding(
-                            padding: const EdgeInsets.fromLTRB(0.0, 14.0, 0.0, 0.0),
+                            padding:
+                                const EdgeInsets.fromLTRB(0.0, 14.0, 0.0, 0.0),
                             child: Container(
-                              height: 200,
-                              color: Colors.cyan,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
+                                      color: const Color(0xffDEE4EB))),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 430,
+                                    child: ListView.builder(
+                                        itemCount: _medication.length,
+                                        itemBuilder:
+                                            (BuildContext context, int index) {
+                                          return _wideMedicationList(
+                                              _medication[index]);
+                                        }),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                        height: 40,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Aldoctone\n25mg',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Color(0xff7D8796),
+                                              ),
+                                            ),
+                                            TextButton(
+                                              style: TextButton.styleFrom(
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
+                                                  primary: Colors.black,
+                                                  textStyle: const TextStyle(
+                                                      fontSize: 16),
+                                                  backgroundColor:
+                                                      Color(0xffF0F1F2)),
+                                              onPressed: () {},
+                                              child: const Text(
+                                                'INACTIVE',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xff7D8796)),
+                                              ),
+                                            ),
+                                          ],
+                                        )),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -1159,42 +1220,50 @@ class _HomeWidgetState extends State<HomeWidget> {
                           width: 25,
                         ),
                         Expanded(
-                          flex: 3,
+                          flex: 2,
                           child: Column(
                             children: [
                               Container(
+                                margin: EdgeInsets.all(12),
                                 alignment: Alignment.topLeft,
-                                color: Colors.white,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                        color: const Color(0xffDEE4EB))),
                                 child: Padding(
                                   padding: const EdgeInsets.all(24.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       const Icon(
                                         Icons.image,
                                         size: 48,
                                         color: Colors.grey,
                                       ),
-                                      Container(height: 10,),
+                                      Container(
+                                        height: 10,
+                                      ),
                                       const Text(
                                         'Which details can be edited?',
                                         style: TextStyle(
                                             fontSize: 14,
-                                            color: Colors.black87
-                                        ),
+                                            color: Colors.black87),
                                       ),
-                                      Container(height: 5,),
+                                      Container(
+                                        height: 5,
+                                      ),
                                       const Text(
                                         'At the time, your medication list can only be '
-                                            'edited by your care manager to ensure '
-                                            'everything stays in sync with your '
-                                            'medical record. If something does\'nt'
-                                            ' look right, you can reach out to Leslie'
-                                            ' Knope or flag it with them on your next call',
+                                        'edited by your care manager to ensure '
+                                        'everything stays in sync with your '
+                                        'medical record. If something does\'nt'
+                                        ' look right, you can reach out to Leslie'
+                                        ' Knope or flag it with them on your next call',
                                         style: TextStyle(
                                             fontSize: 12,
-                                            color: Colors.black54
-                                        ),
+                                            color: Colors.black54),
                                       ),
                                     ],
                                   ),
@@ -1553,6 +1622,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           ),
                                         ),
                                       ),
+                                      SizedBox(height: 5,),
                                       Container(
                                         margin: const EdgeInsets.only(left: 20),
                                         child: const Align(
@@ -1586,6 +1656,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           ),
                                         ),
                                       ),
+                                      SizedBox(height: 5,),
                                       Container(
                                         margin: const EdgeInsets.only(left: 20),
                                         child: const Align(
@@ -1618,6 +1689,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           ),
                                         ),
                                       ),
+                                      SizedBox(height: 5,),
                                       Container(
                                         margin: const EdgeInsets.only(left: 20),
                                         child: const Align(
@@ -1703,9 +1775,88 @@ class _HomeWidgetState extends State<HomeWidget> {
     );
   }
 
-  _wideProfileSettings() {
-
+  _wideMedicationList(Medication medication) {
+    return Column(
+      children: [
+        Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  medication.note.isNotEmpty
+                      ? Tooltip(
+                    message: medication.note,
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Container(
+                        height: 30,
+                        margin: EdgeInsets.all(10),
+                        //alignment: Alignment.center, // This is needed
+                        child: Image.asset(
+                          'assets/images/medication_Icon.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  )
+                      : const SizedBox(
+                    height: 30,
+                    width: 50,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(medication._name,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Color(0xff10121C),
+                          )),
+                      Text(medication._frequency,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Color(0xff555F6E),
+                          ))
+                    ],
+                  ),
+                ],
+              ),
+              medication._info == '125mg'
+                  ? Container(
+                margin: EdgeInsets.all(5),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(16.0),
+                      primary: Colors.black,
+                      textStyle: const TextStyle(fontSize: 16),
+                      backgroundColor: Color(0xff324164)),
+                  onPressed: () {},
+                  child: const Text(
+                    'AS NEEDED',
+                    style: TextStyle(fontSize: 12, color: Colors.white),
+                  ),
+                ),
+              )
+                  : Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                    margin: EdgeInsets.all(10),
+                    child: Text(medication._info,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Color(0xff7D8796),
+                        ))),
+              )
+            ],
+          ),
+        ),
+        Divider()
+      ],
+    );
   }
+
+
+  _wideProfileSettings() {}
 
   _home() {
     return Scaffold(
@@ -1760,18 +1911,21 @@ class _HomeWidgetState extends State<HomeWidget> {
         padding: EdgeInsets.fromLTRB(16.0, 48.0, 16.0, 48.0),
         child: Column(
           children: [
-            Container(height: 32, color: Colors.transparent,),
+            Container(
+              height: 32,
+              color: Colors.transparent,
+            ),
             const Align(
               alignment: Alignment.topLeft,
               child: Text(
                 'Your Account',
-                style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.black54
-                ),
+                style: TextStyle(fontSize: 22, color: Colors.black54),
               ),
             ),
-            Container(height: 16, color: Colors.transparent,),
+            Container(
+              height: 16,
+              color: Colors.transparent,
+            ),
             Column(
               children: [
                 Container(
