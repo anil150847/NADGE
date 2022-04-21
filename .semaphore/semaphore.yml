@@ -1,0 +1,19 @@
+version: v1.0
+name: Testing
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: 'Block #1'
+    task:
+      jobs:
+        - name: Unit test
+          commands:
+            - echo 'running unit tests'
+  - name: 'Block #2'
+    task:
+      jobs:
+        - name: integration tests
+          commands:
+            - echo 'running integration tests'
