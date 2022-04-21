@@ -9,6 +9,12 @@ global_job_config:
     always:
       commands:
         - '[[ -f report.xml ]] && test-results publish report.xml'
+        - name: 'Block #2'
+  global_job_config:
+    epilogue: null
+    always:
+      commands:
+        - '[[ -f report.xml ]] && test-results publish report.xml'
 blocks:
   - name: 'Block #1'
     task:
@@ -16,9 +22,3 @@ blocks:
         - name: Unit test
           commands:
             - echo 'running unit tests'
-  - name: 'Block #2'
-    task:
-      jobs:
-        - name: integration tests
-          commands:
-            - echo 'running integration tests'
